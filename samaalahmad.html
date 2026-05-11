@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة سما الأحمد | SAMA AL-AHMAD</title>
+<meta name="description" content="شركة سما الأحمد للتجارة العامة والوكالات التجارية المحدودة — كربلاء المقدسة، العراق">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Playfair+Display:wght@400;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --blue: #1a1a1a;
+    --gold: #C9A84C;
+    --white: #FFFFFF;
+    --light: #111111;
+    --gray: #9A9A9A;
+    --dark: #080808;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: #141414;
+    color: #E8E0D0;
+    overflow-x: hidden;
+  }
+
+  html[lang="en"] body { font-family: 'Jost', sans-serif; }
+  html[lang="en"] { direction: ltr; }
+  html[lang="ar"] { direction: rtl; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    background: rgba(8,8,8,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+
+  .nav-logo { display: flex; align-items: center; gap: 14px; }
+  .nav-logo-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--gold-dark, #9A7A2E), var(--gold, #C9A84C));
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem; font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .nav-logo-text { line-height: 1.2; }
+  .nav-logo-ar { font-size: 1rem; font-weight: 700; color: var(--blue); }
+  .nav-logo-en { font-size: 0.7rem; font-weight: 500; color: var(--red); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .nav-links { display: flex; align-items: center; gap: 36px; }
+  .nav-links a {
+    font-size: 0.9rem; font-weight: 500; color: #E8E0D0;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+
+  .lang-btn {
+    background: var(--blue); color: white;
+    border: none; padding: 8px 20px; border-radius: 4px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+    cursor: pointer; transition: background 0.2s;
+    font-family: inherit;
+  }
+  .lang-btn:hover { background: var(--red); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: #141414;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #080808 0%, #1a1200 50%, #080808 100%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 40%),
+                      radial-gradient(circle at 60% 80%, rgba(201,168,76,0.08) 0%, transparent 40%);
+  }
+
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 0 60px;
+    width: 100%;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    border: 1px solid rgba(200,16,46,0.6);
+    color: var(--red); font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 6px 18px; border-radius: 2px; margin-bottom: 32px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900; color: var(--white);
+    line-height: 1.15; margin-bottom: 12px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 span { color: var(--red); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: rgba(255,255,255,0.6); font-weight: 300;
+    margin-bottom: 20px; letter-spacing: 0.05em;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-en {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--gold); font-style: italic;
+    margin-bottom: 48px; letter-spacing: 0.03em;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-divider {
+    width: 80px; height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+    margin-bottom: 48px;
+    animation: fadeUp 0.8s 0.35s ease both;
+  }
+
+  .hero-info {
+    display: flex; gap: 48px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .hero-info-item { display: flex; align-items: center; gap: 12px; }
+  .hero-info-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(200,16,46,0.15);
+    border: 1px solid rgba(200,16,46,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+  }
+  .hero-info-text { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+  .hero-info-text strong { color: white; display: block; font-size: 0.9rem; }
+
+  .hero-scroll {
+    position: absolute; bottom: 40px;
+    left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .hero-scroll::after {
+    content: '↓'; font-size: 1.2rem;
+    color: rgba(200,16,46,0.6);
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 120px 60px;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+
+  .section-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--red);
+    margin-bottom: 20px; display: block;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800; color: #E8E0D0;
+    line-height: 1.2; margin-bottom: 24px;
+  }
+
+  .section-body {
+    font-size: 1rem; color: var(--gray);
+    line-height: 1.9; font-weight: 400;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-card {
+    background: #141414;
+    border-radius: 12px; padding: 48px;
+    color: white; position: relative; overflow: hidden;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 150px; height: 150px;
+    background: radial-gradient(circle, rgba(201,168,76,0.2), transparent 70%);
+  }
+
+  .about-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px;
+  }
+
+  .stat-num {
+    font-size: 2.5rem; font-weight: 900; color: var(--red);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8rem; color: rgba(255,255,255,0.5);
+    margin-top: 6px; font-weight: 400;
+  }
+
+  /* SERVICES */
+  .services-section {
+    background: #0A0A0A;
+    padding: 120px 60px;
+  }
+
+  .services-header {
+    text-align: center; max-width: 600px;
+    margin: 0 auto 72px;
+  }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .service-card {
+    background: #141414; border-radius: 12px;
+    padding: 40px 32px; position: relative;
+    overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.1);
+  }
+
+  .service-card::before {
+    content: ''; position: absolute;
+    top: 0; right: 0; left: 0; height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--blue));
+  }
+
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 10px;
+    background: linear-gradient(135deg, rgba(200,16,46,0.1), rgba(27,58,107,0.1));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; margin-bottom: 24px;
+  }
+
+  .service-name {
+    font-size: 1.1rem; font-weight: 700; color: #E8E0D0;
+    margin-bottom: 8px;
+  }
+
+  .service-name-en {
+    font-size: 0.75rem; color: var(--gold); font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 16px; display: block;
+  }
+
+  .service-desc {
+    font-size: 0.9rem; color: var(--gray);
+    line-height: 1.8;
+  }
+
+  .service-loc {
+    margin-top: 20px; display: flex; align-items: center; gap: 8px;
+    font-size: 0.8rem; color: var(--gold); font-weight: 500;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    padding: 120px 60px;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+
+  .contact-info-item {
+    display: flex; gap: 20px; align-items: flex-start;
+    margin-bottom: 36px;
+  }
+
+  .contact-icon {
+    width: 48px; height: 48px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold-dark, #9A7A2E), var(--gold, #C9A84C));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.1rem; flex-shrink: 0;
+  }
+
+  .contact-label {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--red); margin-bottom: 6px;
+  }
+
+  .contact-value {
+    font-size: 1rem; color: var(--dark); font-weight: 500;
+  }
+
+  .contact-form-area {
+    background: var(--dark); border-radius: 16px;
+    padding: 48px; position: relative; overflow: hidden;
+  }
+
+  .contact-form-area::before {
+    content: '';
+    position: absolute; bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(200,16,46,0.2), transparent 70%);
+  }
+
+  .form-title {
+    font-size: 1.4rem; font-weight: 700; color: white;
+    margin-bottom: 32px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+
+  .form-input {
+    width: 100%; padding: 14px 18px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; color: white; font-size: 0.9rem;
+    font-family: inherit; outline: none; transition: border-color 0.2s;
+    direction: inherit;
+  }
+
+  .form-input::placeholder { color: rgba(255,255,255,0.35); }
+  .form-input:focus { border-color: rgba(200,16,46,0.6); }
+
+  textarea.form-input { height: 110px; resize: none; }
+
+  .form-btn {
+    width: 100%; padding: 15px;
+    background: linear-gradient(135deg, var(--red), #9B0D22);
+    color: white; border: none; border-radius: 8px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    font-family: inherit; letter-spacing: 0.05em;
+    transition: opacity 0.2s; margin-top: 8px;
+  }
+
+  .form-btn:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer {
+    background: #050505; color: white;
+    padding: 48px 60px 32px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-size: 1.3rem; font-weight: 800; color: var(--red);
+    letter-spacing: 0.1em; margin-bottom: 8px;
+  }
+
+  .footer-sub {
+    font-size: 0.8rem; color: rgba(255,255,255,0.4);
+    margin-bottom: 32px;
+  }
+
+  .footer-line {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    font-size: 0.75rem; color: rgba(255,255,255,0.3);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero-inner, .about, .contact-section { padding: 0 24px; }
+    .about, .contact-section { grid-template-columns: 1fr; gap: 40px; }
+    .services-section { padding: 80px 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-info { flex-direction: column; gap: 20px; }
+    footer { padding: 40px 24px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">SA</div>
+    <div class="nav-logo-text">
+      <div class="nav-logo-ar" id="nav-company">شركة سما الأحمد</div>
+      <div class="nav-logo-en">SAMA AL-AHMAD</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#about" data-ar="عن الشركة" data-en="About">عن الشركة</a>
+    <a href="#services" data-ar="أعمالنا" data-en="Our Business">أعمالنا</a>
+    <a href="#contact" data-ar="تواصل معنا" data-en="Contact">تواصل معنا</a>
+  </div>
+  <button class="lang-btn" onclick="toggleLang()" id="lang-btn">EN</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-tag" data-ar="كربلاء المقدسة — العراق" data-en="Holy Karbala — Iraq">كربلاء المقدسة — العراق</div>
+    <h1 data-ar="شركة سما <span style='color:var(--red)'>الأحمد</span>" data-en="SAMA <span style='color:var(--red)'>AL-AHMAD</span>">شركة سما <span>الأحمد</span></h1>
+    <p class="hero-sub" data-ar="للتجارة العامة والوكالات التجارية المحدودة" data-en="Trading & Commercial Agencies Limited">للتجارة العامة والوكالات التجارية المحدودة</p>
+    <p class="hero-en" data-ar="شريككم الموثوق في قلب العراق" data-en="Your trusted partner in the heart of Iraq">شريككم الموثوق في قلب العراق</p>
+    <div class="hero-divider"></div>
+    <div class="hero-info">
+      <div class="hero-info-item">
+        <div class="hero-info-icon">📍</div>
+        <div class="hero-info-text">
+          <strong data-ar="كربلاء المقدسة" data-en="Holy Karbala">كربلاء المقدسة</strong>
+          <span data-ar="باب بغداد — العراق" data-en="Bab Baghdad — Iraq">باب بغداد — العراق</span>
+        </div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-icon">📞</div>
+        <div class="hero-info-text">
+          <strong>+964 780 196 6601</strong>
+          <span data-ar="للتواصل المباشر" data-en="Direct Contact">للتواصل المباشر</span>
+        </div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-icon">✉️</div>
+        <div class="hero-info-text">
+          <strong>info@samaalahmad.com</strong>
+          <span data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" data-ar="اكتشف" data-en="Explore">اكتشف</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div>
+    <span class="section-tag" data-ar="من نحن" data-en="About Us">من نحن</span>
+    <h2 class="section-title" data-ar="رؤية راسخة في قلب العراق" data-en="A Steadfast Vision in the Heart of Iraq">رؤية راسخة في قلب العراق</h2>
+    <p class="section-body" data-ar="شركة سما الأحمد للتجارة العامة والوكالات التجارية المحدودة، شركة عراقية رائدة مقرها كربلاء المقدسة. تضم الشركة محفظة متنوعة من الأعمال تشمل قطاع الضيافة والفنادق وخدمات نقل المسافرين والوكالات التجارية. نسعى دائماً إلى تقديم أعلى مستويات الخدمة لعملائنا وشركائنا في العراق والمنطقة." data-en="Sama Al-Ahmad Trading & Commercial Agencies Limited is a leading Iraqi company headquartered in Holy Karbala. Our diverse portfolio spans hospitality, passenger transport, and commercial agencies. We are committed to delivering the highest standards of service to our clients and partners across Iraq and the region.">شركة سما الأحمد للتجارة العامة والوكالات التجارية المحدودة، شركة عراقية رائدة مقرها كربلاء المقدسة. تضم الشركة محفظة متنوعة من الأعمال تشمل قطاع الضيافة والفنادق وخدمات نقل المسافرين والوكالات التجارية.</p>
+  </div>
+  <div class="about-visual">
+    <div class="about-card">
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;" data-ar="محفظة أعمالنا" data-en="Our Portfolio">محفظة أعمالنا</div>
+      <div style="font-size:1.6rem;font-weight:800;color:white;line-height:1.3;" data-ar="خمسة قطاعات<br>متنوعة ومتكاملة" data-en="Five Diverse &<br>Integrated Sectors">خمسة قطاعات<br>متنوعة ومتكاملة</div>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label" data-ar="فنادق في كربلاء" data-en="Hotels in Karbala">فنادق في كربلاء</div>
+        </div>
+        <div>
+          <div class="stat-num">361</div>
+          <div class="stat-label" data-ar="وكالة تجارية" data-en="Commercial Agency">وكالة تجارية</div>
+        </div>
+        <div>
+          <div class="stat-num">1</div>
+          <div class="stat-label" data-ar="شركة نقل مسافرين" data-en="Passenger Transport">شركة نقل مسافرين</div>
+        </div>
+        <div>
+          <div class="stat-num" style="color:var(--gold);">IQ</div>
+          <div class="stat-label" data-ar="مسجلة في العراق" data-en="Registered in Iraq">مسجلة في العراق</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-header">
+    <span class="section-tag" data-ar="أعمالنا" data-en="Our Business">أعمالنا</span>
+    <h2 class="section-title" data-ar="محفظة متكاملة من الخدمات" data-en="An Integrated Portfolio of Services">محفظة متكاملة من الخدمات</h2>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">🏨</div>
+      <div class="service-name" data-ar="فندق جرش الدولي" data-en="Hotel Jarash International">فندق جرش الدولي</div>
+      <span class="service-name-en">Hotel Jarash International</span>
+      <p class="service-desc" data-ar="فندق دولي متميز يقدم أعلى مستويات الضيافة والراحة للزوار والحجاج القادمين إلى كربلاء المقدسة." data-en="A distinguished international hotel offering premium hospitality for visitors and pilgrims to Holy Karbala.">فندق دولي متميز يقدم أعلى مستويات الضيافة والراحة للزوار والحجاج القادمين إلى كربلاء المقدسة.</p>
+      <div class="service-loc">📍 <span data-ar="كربلاء المقدسة، العراق" data-en="Holy Karbala, Iraq">كربلاء المقدسة، العراق</span></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🌿</div>
+      <div class="service-name" data-ar="فندق واحة جرش" data-en="Wahat Jarash Hotel">فندق واحة جرش</div>
+      <span class="service-name-en">Wahat Jarash Hotel</span>
+      <p class="service-desc" data-ar="تجربة إقامة هادئة ومريحة في قلب كربلاء المقدسة، توفر للضيوف أجواء من الراحة والاسترخاء." data-en="A peaceful and comfortable stay in the heart of Holy Karbala, offering guests an atmosphere of relaxation.">تجربة إقامة هادئة ومريحة في قلب كربلاء المقدسة، توفر للضيوف أجواء من الراحة والاسترخاء.</p>
+      <div class="service-loc">📍 <span data-ar="كربلاء المقدسة، العراق" data-en="Holy Karbala, Iraq">كربلاء المقدسة، العراق</span></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">⭐</div>
+      <div class="service-name" data-ar="فندق نجمة جرش" data-en="Najmat Jarash Hotel">فندق نجمة جرش</div>
+      <span class="service-name-en">Najmat Jarash Hotel</span>
+      <p class="service-desc" data-ar="فندق يجمع بين الأناقة والراحة، يمنح الزوار إقامة لا تُنسى في رحاب كربلاء المقدسة." data-en="A hotel combining elegance and comfort, offering guests an unforgettable stay in Holy Karbala.">فندق يجمع بين الأناقة والراحة، يمنح الزوار إقامة لا تُنسى في رحاب كربلاء المقدسة.</p>
+      <div class="service-loc">📍 <span data-ar="كربلاء المقدسة، العراق" data-en="Holy Karbala, Iraq">كربلاء المقدسة، العراق</span></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🚌</div>
+      <div class="service-name" data-ar="أثمار الخليج للنقل" data-en="Athmar Al-Khalij Transport">أثمار الخليج للنقل</div>
+      <span class="service-name-en">Athmar Al-Khalij Transport</span>
+      <p class="service-desc" data-ar="شركة متخصصة في نقل المسافرين بأعلى معايير السلامة والراحة، تخدم الحجاج والزوار في العراق." data-en="Specialized passenger transport company serving pilgrims and visitors across Iraq with the highest safety standards.">شركة متخصصة في نقل المسافرين بأعلى معايير السلامة والراحة، تخدم الحجاج والزوار في العراق.</p>
+      <div class="service-loc">📍 <span data-ar="العراق" data-en="Iraq">العراق</span></div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🤝</div>
+      <div class="service-name" data-ar="وكالة 361 التجارية" data-en="Agency 361">وكالة 361 التجارية</div>
+      <span class="service-name-en">Agency 361</span>
+      <p class="service-desc" data-ar="وكالة تجارية متخصصة تمثل شركات وعلامات تجارية دولية وتوفر خدمات الوساطة التجارية في السوق العراقية." data-en="A specialized commercial agency representing international companies and brands, providing trade brokerage services in the Iraqi market.">وكالة تجارية متخصصة تمثل شركات وعلامات تجارية دولية في السوق العراقية.</p>
+      <div class="service-loc">📍 <span data-ar="العراق" data-en="Iraq">العراق</span></div>
+    </div>
+
+    <div class="service-card" style="background:linear-gradient(135deg,var(--dark),var(--blue));color:white;border:none;">
+      <div class="service-icon" style="background:rgba(255,255,255,0.1);">🌍</div>
+      <div class="service-name" style="color:white;" data-ar="شريككم في العراق" data-en="Your Partner in Iraq">شريككم في العراق</div>
+      <span class="service-name-en" style="color:rgba(255,255,255,0.5);">Your Partner in Iraq</span>
+      <p class="service-desc" style="color:rgba(255,255,255,0.6);" data-ar="نرحب بالشراكات والفرص التجارية الجديدة. تواصل معنا لاستكشاف إمكانيات التعاون." data-en="We welcome new partnerships and business opportunities. Contact us to explore collaboration possibilities.">نرحب بالشراكات والفرص التجارية الجديدة. تواصل معنا لاستكشاف إمكانيات التعاون.</p>
+      <div class="service-loc" style="color:var(--gold);">✉️ info@samaalahmad.com</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div>
+    <span class="section-tag" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+    <h2 class="section-title" data-ar="نسعد بالتواصل معكم" data-en="We'd Love to Hear From You">نسعد بالتواصل معكم</h2>
+    <p class="section-body" style="margin-bottom:48px;" data-ar="فريقنا جاهز للإجابة على استفساراتكم ومناقشة فرص التعاون." data-en="Our team is ready to answer your inquiries and discuss cooperation opportunities.">فريقنا جاهز للإجابة على استفساراتكم ومناقشة فرص التعاون.</p>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label" data-ar="العنوان" data-en="Address">العنوان</div>
+        <div class="contact-value" data-ar="العراق — كربلاء المقدسة — باب بغداد" data-en="Iraq — Holy Karbala — Bab Baghdad">العراق — كربلاء المقدسة — باب بغداد</div>
+      </div>
+    </div>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label" data-ar="الهاتف" data-en="Phone">الهاتف</div>
+        <div class="contact-value">+964 780 196 6601</div>
+      </div>
+    </div>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <div class="contact-label" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</div>
+        <div class="contact-value">info@samaalahmad.com</div>
+      </div>
+    </div>
+
+    <div class="contact-info-item">
+      <div class="contact-icon">🌐</div>
+      <div>
+        <div class="contact-label" data-ar="الموقع الإلكتروني" data-en="Website">الموقع الإلكتروني</div>
+        <div class="contact-value">www.samaalahmad.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form-area">
+    <div class="form-title" data-ar="أرسل لنا رسالة" data-en="Send Us a Message">أرسل لنا رسالة</div>
+    <div class="form-group">
+      <input type="text" class="form-input" id="f-name" data-placeholder-ar="الاسم الكامل" data-placeholder-en="Full Name" placeholder="الاسم الكامل">
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-input" id="f-email" data-placeholder-ar="البريد الإلكتروني" data-placeholder-en="Email Address" placeholder="البريد الإلكتروني">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-input" id="f-subject" data-placeholder-ar="الموضوع" data-placeholder-en="Subject" placeholder="الموضوع">
+    </div>
+    <div class="form-group">
+      <textarea class="form-input" id="f-msg" data-placeholder-ar="رسالتك..." data-placeholder-en="Your message..." placeholder="رسالتك..."></textarea>
+    </div>
+    <button class="form-btn" onclick="sendMsg()" data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SAMA AL-AHMAD</div>
+  <div class="footer-sub" data-ar="شركة سما الأحمد للتجارة العامة والوكالات التجارية المحدودة" data-en="Trading & Commercial Agencies Limited">شركة سما الأحمد للتجارة العامة والوكالات التجارية المحدودة</div>
+  <div class="footer-line" data-ar="© 2026 شركة سما الأحمد. جميع الحقوق محفوظة." data-en="© 2026 Sama Al-Ahmad. All rights reserved.">© 2026 شركة سما الأحمد. جميع الحقوق محفوظة.</div>
+</footer>
+
+<script>
+let currentLang = 'ar';
+
+function toggleLang() {
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  const html = document.documentElement;
+  html.setAttribute('lang', currentLang);
+  html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+  document.getElementById('lang-btn').textContent = currentLang === 'ar' ? 'EN' : 'عر';
+
+  document.querySelectorAll('[data-ar]').forEach(el => {
+    const txt = el.getAttribute('data-' + currentLang);
+    if (txt) el.innerHTML = txt;
+  });
+
+  document.querySelectorAll('[data-placeholder-ar]').forEach(el => {
+    el.placeholder = el.getAttribute('data-placeholder-' + currentLang);
+  });
+}
+
+function sendMsg() {
+  const name = document.getElementById('f-name').value;
+  const email = document.getElementById('f-email').value;
+  const msg = document.getElementById('f-msg').value;
+  if (!name || !email || !msg) {
+    alert(currentLang === 'ar' ? 'يرجى ملء جميع الحقول' : 'Please fill all fields');
+    return;
+  }
+  alert(currentLang === 'ar' ? 'شكراً! سنتواصل معك قريباً.' : 'Thank you! We will contact you soon.');
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-email').value = '';
+  document.getElementById('f-subject').value = '';
+  document.getElementById('f-msg').value = '';
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
