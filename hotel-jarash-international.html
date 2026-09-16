@@ -514,6 +514,14 @@
   }
 </style>
 
+
+<style>
+/* Robust full gallery: always render every photo */
+#gallery .gallery-grid{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:14px !important;overflow:visible !important;height:auto !important;max-height:none !important;}
+#gallery .gallery-grid img{display:block !important;visibility:visible !important;opacity:1 !important;width:100% !important;height:260px !important;object-fit:cover !important;}
+@media(max-width:768px){#gallery .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}#gallery .gallery-grid img{height:165px !important;}}
+@media(max-width:420px){#gallery .gallery-grid{grid-template-columns:1fr !important;}#gallery .gallery-grid img{height:auto !important;aspect-ratio:4/3 !important;}}
+</style>
 </head>
 <body>
 
@@ -580,21 +588,22 @@
   <span class="section-tag" data-ar="معرض الصور" data-en="Photo Gallery">معرض الصور</span>
   <h2 class="section-title" data-ar="جولة داخل الفندق" data-en="Tour the Hotel">جولة داخل الفندق</h2>
   <div class="gallery-grid">
-    <img src="jarash-02-lobby.jpg" alt="اللوبي الرئيسي" loading="lazy" data-ar="اللوبي الرئيسي" data-en="Main Lobby">
-    <img src="jarash-03-lobby.jpg" alt="بهو الفندق" loading="lazy" data-ar="بهو الفندق" data-en="Hotel Lobby">
-    <img src="jarash-04-reception.jpg" alt="الاستقبال" loading="lazy" data-ar="الاستقبال" data-en="Reception">
-    <img src="jarash-05-room-triple.jpg" alt="غرفة ثلاثية" loading="lazy" data-ar="غرفة ثلاثية" data-en="Triple Room">
-    <img src="jarash-06-room-twin.jpg" alt="غرفة مزدوجة" loading="lazy" data-ar="غرفة مزدوجة" data-en="Twin Room">
-    <img src="jarash-07-room-single.jpg" alt="غرفة مفردة" loading="lazy" data-ar="غرفة مفردة" data-en="Single Room">
-    <img src="jarash-08-room-family.jpg" alt="غرفة عائلية" loading="lazy" data-ar="غرفة عائلية" data-en="Family Room">
-    <img src="jarash-09-bathroom.jpg" alt="حمام فاخر" loading="lazy" data-ar="حمام فاخر" data-en="Luxury Bathroom">
-    <img src="jarash-10-bathroom.jpg" alt="حمام مع دُش" loading="lazy" data-ar="حمام مع دُش" data-en="Bathroom">
-    <img src="jarash-11-dining.jpg" alt="قاعة طعام خاصة" loading="lazy" data-ar="قاعة طعام خاصة" data-en="Private Dining">
-    <img src="jarash-12-suite.jpg" alt="جناح فاخر" loading="lazy" data-ar="جناح فاخر" data-en="Luxury Suite">
-    <img src="jarash-13-lounge.jpg" alt="صالة الطابق العلوي" loading="lazy" data-ar="صالة الطابق العلوي" data-en="Upper Lounge">
-    <img src="jarash-14-cafe.jpg" alt="مقهى الفندق" loading="lazy" data-ar="مقهى الفندق" data-en="Café">
-    <img src="jarash-15-massage.jpg" alt="كرسي المساج" loading="lazy" data-ar="كرسي المساج" data-en="Massage Chair">
-    <img src="jarash-16-flags.jpg" alt="قاعة الأعلام" loading="lazy" data-ar="قاعة الأعلام" data-en="Flags Hall">
+    <img src="jarash-01-exterior.jpg" alt="واجهة فندق جرش الدولي" loading="eager" decoding="async" data-ar="واجهة الفندق" data-en="Hotel Exterior">
+    <img src="jarash-02-lobby.jpg" alt="اللوبي الرئيسي" loading="eager" decoding="async" data-ar="اللوبي الرئيسي" data-en="Main Lobby">
+    <img src="jarash-03-lobby.jpg" alt="بهو الفندق" loading="eager" decoding="async" data-ar="بهو الفندق" data-en="Hotel Lobby">
+    <img src="jarash-04-reception.jpg" alt="الاستقبال" loading="eager" decoding="async" data-ar="الاستقبال" data-en="Reception">
+    <img src="jarash-05-room-triple.jpg" alt="غرفة ثلاثية" loading="eager" decoding="async" data-ar="غرفة ثلاثية" data-en="Triple Room">
+    <img src="jarash-06-room-twin.jpg" alt="غرفة مزدوجة" loading="eager" decoding="async" data-ar="غرفة مزدوجة" data-en="Twin Room">
+    <img src="jarash-07-room-single.jpg" alt="غرفة مفردة" loading="eager" decoding="async" data-ar="غرفة مفردة" data-en="Single Room">
+    <img src="jarash-08-room-family.jpg" alt="غرفة عائلية" loading="eager" decoding="async" data-ar="غرفة عائلية" data-en="Family Room">
+    <img src="jarash-09-bathroom.jpg" alt="حمام فاخر" loading="eager" decoding="async" data-ar="حمام فاخر" data-en="Luxury Bathroom">
+    <img src="jarash-10-bathroom.jpg" alt="حمام مع دُش" loading="eager" decoding="async" data-ar="حمام مع دُش" data-en="Bathroom">
+    <img src="jarash-11-dining.jpg" alt="قاعة طعام خاصة" loading="eager" decoding="async" data-ar="قاعة طعام خاصة" data-en="Private Dining">
+    <img src="jarash-12-suite.jpg" alt="جناح فاخر" loading="eager" decoding="async" data-ar="جناح فاخر" data-en="Luxury Suite">
+    <img src="jarash-13-lounge.jpg" alt="صالة الطابق العلوي" loading="eager" decoding="async" data-ar="صالة الطابق العلوي" data-en="Upper Lounge">
+    <img src="jarash-14-cafe.jpg" alt="مقهى الفندق" loading="eager" decoding="async" data-ar="مقهى الفندق" data-en="Café">
+    <img src="jarash-15-massage.jpg" alt="كرسي المساج" loading="eager" decoding="async" data-ar="كرسي المساج" data-en="Massage Chair">
+    <img src="jarash-16-flags.jpg" alt="قاعة الأعلام" loading="eager" decoding="async" data-ar="قاعة الأعلام" data-en="Flags Hall">
   </div>
 </section>
 
