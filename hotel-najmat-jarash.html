@@ -517,5 +517,39 @@ function toggleLang(){
 }
 </script>
 
+
+<script>
+// GA4 reservation-intent tracking for WhatsApp links
+document.addEventListener('click', function (event) {
+  const link = event.target.closest('a[href*="wa.me/"]');
+  if (!link || typeof gtag !== 'function') return;
+
+  let hotelName = 'Sama Al Ahmad Hotels';
+  const path = window.location.pathname;
+  if (path.includes('hotel-jarash-international')) hotelName = 'Hotel Jarash International';
+  else if (path.includes('hotel-najmat-jarash')) hotelName = 'Hotel Najmat Jarash';
+  else if (path.includes('hotel-wahat-jarash')) hotelName = 'Hotel Wahat Jarash';
+  else {
+    const card = link.closest('.hotel-card, .card, article');
+    if (card) {
+      const hotelLink = card.querySelector('a[href*="hotel-"]');
+      if (hotelLink) {
+        const href = hotelLink.getAttribute('href') || '';
+        if (href.includes('jarash-international')) hotelName = 'Hotel Jarash International';
+        else if (href.includes('najmat-jarash')) hotelName = 'Hotel Najmat Jarash';
+        else if (href.includes('wahat-jarash')) hotelName = 'Hotel Wahat Jarash';
+      }
+    }
+  }
+
+  const match = link.href.match(/wa\.me\/(\d+)/);
+  gtag('event', 'whatsapp_reservation_click', {
+    hotel_name: hotelName,
+    whatsapp_number: match ? match[1] : '',
+    link_url: link.href,
+    page_path: window.location.pathname
+  });
+});
+</script>
 </body>
 </html>
